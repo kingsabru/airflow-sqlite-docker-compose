@@ -8,9 +8,28 @@ Note: This resources are based on Airflow version `2.8.0`. However, I imagine th
 - You can only use `SequentialExecutor` with SQLite. If require a different executor you should reference the official Airflow docs for [Running Airflow in Docker](https://airflow.apache.org/docs/apache-airflow/2.7.0/howto/docker-compose/index.html).
 
 ## Usage
+### Clone Repo
+- Clone the repo. For example: `git clone https://github.com/kingsabru/airflow-sqlite-docker-compose.git`
 ### Initial Setup
-1. Create Airflow supporting folders: ```mkdir -p ./{config,dags,db,logs,plugins}```
-2. Create `.env` file: ```echo -e "AIRFLOW_UID=$(id -u)" > .env```
+- Create Airflow supporting folders: ```mkdir -p ./{config,dags,db,logs,plugins}```
+- Create `.env` file: ```echo -e "AIRFLOW_UID=$(id -u)" > .env```
+
+Once done, your folder structure should look like this:
+```
+├── config
+├── dags
+│   └── example_dag.py
+├── db
+├── logs
+├── plugins
+├── .env
+├── .env.example
+├── .gitignore
+├── docker-compose.yml
+├── Dockerfile
+├── README.md
+└── requirements.txt
+```
 
 ### (Option 1) Deploy Airflow without Custom Image
 - Start docker containers: `docker compose up -d`
