@@ -7,6 +7,9 @@ Note: These resources are based on Airflow version `2.8.0`. However, I imagine t
 - The resources in this repo are purely for testing and development purposes and should not be used for production.
 - You can only use `SequentialExecutor` with SQLite. If you require a different executor, you should refer to the official Airflow docs for [Running Airflow in Docker](https://airflow.apache.org/docs/apache-airflow/2.7.0/howto/docker-compose/index.html).
 
+## Pre-requisites
+- [Docker](https://docs.docker.com/engine/install/)
+
 ## Usage
 ### Clone Repo
 - Clone the repo. For example: `git clone https://github.com/kingsabru/airflow-sqlite-docker-compose.git`
@@ -60,7 +63,9 @@ New DAGs should be created in the `./dags` folder. Simply create a `.py` Python 
 
 ## Commands
 - Build custom Airflow Image: `docker compose build`
-- Start Docker Containers: `docker compose up -d`
+- Spin Up Docker Containers: `docker compose up -d`
+- Stop Docker Containers: `docker compose stop`
+- Start stopped Docker Containers: `docker compose start`
 - Destroy Docker Containers: `docker compose down --volumes --remove-orphans`
 
 ## References
