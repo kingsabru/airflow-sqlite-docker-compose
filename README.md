@@ -13,9 +13,11 @@ Note: These resources are based on Airflow version `2.8.0`. However, I imagine t
 ## Usage
 ### Clone Repo
 - Clone the repo. For example: `git clone https://github.com/kingsabru/airflow-sqlite-docker-compose.git`
+
 ### Initial Setup
-- Create Airflow supporting folders: ```mkdir -p ./{config,dags,db,logs,plugins}```
-- Create `.env` file: ```echo -e "AIRFLOW_UID=$(id -u)" > .env```
+The `init.sh` script will create the supporting folders and `.env` file.
+- Make `init.sh` executable: ```chmod +x init.sh```
+- Run `init.sh`: ```./init.sh```
 
 Once done, your folder structure should look like this:
 ```
@@ -30,6 +32,7 @@ Once done, your folder structure should look like this:
 ├── .gitignore
 ├── docker-compose.yml
 ├── Dockerfile
+├── init.sh
 ├── README.md
 └── requirements.txt
 ```
@@ -41,7 +44,7 @@ Once done, your folder structure should look like this:
 - Update the `docker-compose.yml`. Comment the line `image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:2.8.0}` and uncomment the line `build: .`. [reference](https://airflow.apache.org/docs/apache-airflow/2.7.0/howto/docker-compose/index.html#special-case-adding-dependencies-via-requirements-txt-file)
 - (Optional) Update the `Dockerfile` as necessary. A common change you can make is to modify the Airflow version.
 - (Optional) Add custom Python packages to the `requirements.txt` file. Airflow plugins hosted on Pypi can also be added here.
-- Build custom Docker image: `docker compose build`
+- Build a custom Docker image: `docker compose build`
 - Start docker containers: `docker compose up -d`. Alternatively, you can build and start the container automatically using the command: `docker compose up --build -d`
 
 ### Login to Airflow UI
@@ -51,7 +54,7 @@ Once done, your folder structure should look like this:
 - Go to the menu directory: Admin > Connections
 - Click on the `+` icon to add a new record.
 - For `Connection Type`, choose the type of connection from the drop-down.
-- Input a `Connection Id` value. This will be the name of the connection. Exammple: clickhouse_conn
+- Input a `Connection Id` value. This will be the name of the connection. Example: clickhouse_conn
 - Fill in the rest of the fields as necessary.
 
 ### (Optional) Create DAG
