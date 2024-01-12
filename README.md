@@ -1,7 +1,20 @@
 # Airflow SQLite Docker Compose
+![airflow-sqlite-docker](thumbnail.webp "Airflow SQLite Docker")
+
+# Introduction
 This repo contains resources for deploying a development Airflow instance with an SQLite metadata backend using Docker Compose. The `./airflow/docker-compose.yaml` is a modified version of the official Airflow [docker-compose.yml](https://airflow.apache.org/docs/apache-airflow/2.8.0/docker-compose.yaml) and is based on instructions from the official Airflow docs for [Running Airflow in Docker](https://airflow.apache.org/docs/apache-airflow/2.8.0/howto/docker-compose/index.html).
 
 Note: These resources are based on Airflow version `2.8.0`. However, I imagine the instructions can apply to all versions `2.x.x` with minor modifications.
+
+## Table of Content
+1. [Introduction](#introduction)
+2. [Warning](#warnings)
+3. [Pre-requisites](#pre-requisites)
+4. [Usage](#usage)
+5. [Commands](#commands)
+6. [References](#references)
+7. [Contribution](#contribution)
+5. [License](#license)
 
 ## Warnings
 - The resources in this repo are purely for testing and development purposes and should not be used for production.
@@ -34,7 +47,8 @@ Once done, your folder structure should look like this:
 ├── Dockerfile
 ├── init.sh
 ├── README.md
-└── requirements.txt
+├── requirements.txt
+└── thumbnail.webp
 ```
 
 ### (Option 1) Deploy Airflow without Custom Image
@@ -73,3 +87,9 @@ New DAGs should be created in the `./dags` folder. Simply create a `.py` Python 
 
 ## References
 - [Running Airflow in Docker](https://airflow.apache.org/docs/apache-airflow/2.7.0/howto/docker-compose/index.html)
+
+## Contribution
+If you have any suggestions, bug reports, or want to contribute to this userscript, feel free to create issues or pull requests in this GitHub repository.
+
+## License
+This project is licensed under the [MIT License](LICENSE).
