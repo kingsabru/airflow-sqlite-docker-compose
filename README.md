@@ -28,28 +28,9 @@ Note: These resources are based on Airflow version `2.8.0`. However, I imagine t
 - Clone the repo. For example: `git clone https://github.com/kingsabru/airflow-sqlite-docker-compose.git`
 
 ### Initial Setup
-The `init.sh` script will create the supporting folders and `.env` file.
+Run the `init.sh` script to create the supporting folders and `.env` file.
 - Make `init.sh` executable: ```chmod +x init.sh```
 - Run `init.sh`: ```./init.sh```
-
-Once done, your folder structure should look like this:
-```
-├── config
-├── dags
-│   └── example_dag.py
-├── db
-├── logs
-├── plugins
-├── .env
-├── .env.example
-├── .gitignore
-├── docker-compose.yml
-├── Dockerfile
-├── init.sh
-├── README.md
-├── requirements.txt
-└── thumbnail.webp
-```
 
 ### (Option 1) Deploy Airflow without Custom Image
 - Start docker containers: `docker compose up -d`
