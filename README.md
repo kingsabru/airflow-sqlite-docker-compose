@@ -67,7 +67,7 @@ New DAGs should be created in the `./dags` folder. Simply create a `.py` Python 
 - Destroy Docker Containers: `docker compose down --volumes --remove-orphans`
 
 ## References
-- [Running Airflow in Docker](https://airflow.apache.org/docs/apache-airflow/2.7.0/howto/docker-compose/index.html)
+- [Running Airflow in Docker](https://airflow.apache.org/docs/apache-airflow/2.8.0/howto/docker-compose/index.html)
 
 ## Contribution
 If you have any suggestions, bug reports, or want to contribute to this userscript, feel free to create issues or pull requests in this GitHub repository.
